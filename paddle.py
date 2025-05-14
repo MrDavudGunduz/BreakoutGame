@@ -11,9 +11,9 @@ paddle.goto(0, -250)
 def move_left():
     x = paddle.xcor()
     if x > -350:
-        paddle.setx(x - 20)
+        paddle.setx(x - 25)
 
 def move_right():
     x = paddle.xcor()
     if x < 350:
-        paddle.setx(x + 20)
+        paddle.setx(x + 25)
