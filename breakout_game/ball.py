@@ -42,11 +42,12 @@ def check_paddle_collision(paddle):
 
 def check_brick_collision(bricks):
     for brick in bricks:
-        if brick.distance(ball) < 35:
-            brick.hideturtle()
-            bricks.remove(brick)
-            ball.dy *= -1
-            sound.play_hit_sound()
+        if ball.distance(brick["turtle"]) < 35:  # Adjust the collision threshold as needed
+            brick["turtle"].clear()  # Remove the drawing associated with the brick
+            brick["turtle"].hideturtle()  # Hide the turtle object after the collision
+            bricks.remove(brick)  # Remove the brick from the list
+            ball.dy *= -1  # Change ball direction
+            sound.play_hit_sound()  # Play sound effect
             return True
     return False
 
